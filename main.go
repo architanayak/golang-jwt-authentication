@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/dgrijalva/jwt-go"
+	"github.com/golang-jwt/jwt"
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 	"github.com/jinzhu/gorm"
@@ -18,8 +18,8 @@ import (
 //--------GLOBAL VARIABLES---------------
 
 var (
-  router *mux.Router
-  secretkey string = "secretkeyjwt"
+	router    *mux.Router
+	secretkey string = "secretkeyjwt"
 )
 
 //------------STRUCTS---------------------
@@ -178,7 +178,7 @@ func CreateRouter() {
 	router = mux.NewRouter()
 }
 
-//initialize all routes 
+//initialize all routes
 func InitializeRoute() {
 	router.HandleFunc("/signup", SignUp).Methods("POST")
 	router.HandleFunc("/signin", SignIn).Methods("POST")
