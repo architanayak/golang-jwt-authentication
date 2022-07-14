@@ -65,7 +65,7 @@ func GetDatabase() *gorm.DB {
 
 	err = sqldb.Ping()
 	if err != nil {
-		log.Fatal("Database connected")
+		log.Fatal("Database connection failed.")
 	}
 	fmt.Println("Database connection successful.")
 	return connection
